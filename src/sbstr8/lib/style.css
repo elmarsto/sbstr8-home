@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-bold-italic: serif;
+  --font-bold: serif;
+  --font-header-bold-italic: sans-serif;
+  --font-header-bold: sans-serif;
+  --font-header-italic: sans-serif;
+  --font-header: sans-serif;
+  --font-italic: serif;
+  --font-mono-bold: monospace;
+  --font-mono-bold_italic: monospace;
+  --font-mono-italic: monospace;
+  --font-mono: monospace;
+  --font-mono_header-bold: monospace;
+  --font-mono_header: monospace;
+  --font: serif;
+  --foreground-rgb: 0, 0, 0;
+  --max-width: 1100px;
+  --foreground-rgb: 10, 10, 10;
+  --background-rgb: 245, 245, 245;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-rgb: 10, 10, 10;
+    --foreround-rgb: 245, 245, 245;
+  }
+  html {
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(var(--background-rgb));
+  color: rgb(var(--foreground-rgb));
+  font-family: var(--font);
+}
+
+em, i {
+  font-family: var(--font-italic);
+}
+
+strong, b {
+  font-family: var(--font-bold);
+}
+
+em strong, em b, i strong, i b,
+strong em, strong i, b em, b i {
+  font-family: var(--font-bold-italic);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+}
+
+h1 strong, h1 b, h2 strong, h2 b, h3 strong, h3 b, h4 strong, h4 b, h5 strong, h5 b, h6 strong, h6 b {
+  font-family: var(--font-header-bold);
+}
+
+a {
+  text-decoration: underline;
+}
+
+article p {
+  text-indent: 1rem;
+  margin-bottom: 1rem;
+}
+
+article li {
+  padding-bottom: 0.5rem;
+}
+article ul, article ol {
+  list-style-position: outside;
+}
+article ol {
+  padding-left: 1.5rem;
+}
+article ul ul {
+  padding-left: 1.5rem;
+}
+article ul li::before {
+  content: '\2192';
+  padding-right: 0.4rem;
+}
+article ul ul li::before {
+  content: '\21B3';
+}
+
+article ol {
+  list-style-type: decimal;
+}
+article ol ol {
+  list-style-type: lower-latin;
+}
+article ol ol ol {
+  list-style-type: lower-roman;
+}
+article ol ol ol ol{
+  list-style-type: lower-greek;
+}
+
+article {
+  orphans: 1;
+}
+
+pre {
+  font-family: var(--font-mono);
+}
+code {
+  font-family: var(--font-mono-bold);
+}
+
