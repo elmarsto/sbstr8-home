@@ -11,7 +11,8 @@
     "format": "npx prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "storybook": "npx storybook dev -s ./public -p 6006",
     "build-storybook": "npx storybook build -s ./public",
-    "test": "npx jest --passWithNoTests"
+    "test": "npx jest --passWithNoTests",
+    "deploy": "rsync -rlvz --progress --safe-links --delete-after `cat .rsync-includes` lattice@sec.fleshcassette.net:/opt/nextjs/s8home/"
   },
   "repository": {
     "type": "git",
