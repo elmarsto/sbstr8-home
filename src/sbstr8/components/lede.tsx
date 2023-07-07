@@ -45,7 +45,7 @@ export const Lede = ({
   const pic = thumbnail || image || cfg.icon || THUMB_DEFAULT;
   return (
     <div className={ccn('s8-lede', className)} style={style}>
-      <Link className={ccn('s8-lede-thumbnail')} href={urlJoin('post', slug)}>
+      <Link className={ccn('s8-lede-thumbnail')} href={urlJoin('posts', slug)}>
         <Image
           className={thumbnailClassName}
           src={pic}
@@ -55,7 +55,7 @@ export const Lede = ({
         />
       </Link>
       <h2 className={ccn('s8-lede-title', titleClassName)}>
-        <Link href={urlJoin('post', slug)}>{title}</Link>
+        <Link href={urlJoin('posts', slug)}>{title}</Link>
       </h2>
       <h3 className={ccn('s8-lede-date', dateClassName)}>{date}</h3>
       <div className={ccn('s8-lede-description', descriptionClassName)}>
