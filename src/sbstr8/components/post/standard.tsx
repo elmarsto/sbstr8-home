@@ -22,7 +22,7 @@ export interface StandardProps {
   dateClassName?: string;
   footnoteClassName?: string;
   footnotes?: ReactNode;
-  image: string;
+  image?: string;
   title: string;
   titleClassName?: string;
   updated?: string;
