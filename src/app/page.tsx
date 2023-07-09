@@ -19,12 +19,12 @@ const Root = async () => (
       <h3>
         <em>Ahem,</em> it&apos;s pronounced &ldquo;substrate&rdquo;
       </h3>
-      <div className="mt-20">
+      <div className="md:mt-20">
         <strong>sbstr8</strong> is a tool for rich storytelling and journalism,
         using open standards and the very latest tech stack.
       </div>
       <h3>Latest vibes</h3>
-      <div className="mt-20">
+      <div className="md:mt-20">
         <strong>sbstr8</strong> is based on{' '}
         <Link href="//apollographql.com">Apollo GraphQL</Link>,{' '}
         <Link href="//react.dev">React</Link>, and{' '}
@@ -37,7 +37,7 @@ const Root = async () => (
         properties of server-rendered HTML.
       </div>
       <h3>Three core values</h3>
-      <ul className="mt-20 mb-10">
+      <ul className="md:mt-20 mb-10">
         <li className="mb-3">
           <strong>developer&nbsp;≡&nbsp;user</strong>
           <p>
