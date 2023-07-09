@@ -1,14 +1,34 @@
 import urlJoin from 'url-join';
-import '@/sbstr8/lib/style.css';
+import Image from '@/sbstr8/components/image';
+import { PageHeader } from '@/sbstr8/components/page/header';
 import pkg from '@/../package.json';
 import cfg, { defaultAuthor } from '@/../sbstr8.config';
 import defaults from '@/sbstr8/lib/default';
+import '@/sbstr8/lib/style.css';
 import './theme.css';
 
-const MainLayout = ({ children }: React.PropsWithChildren<unknown>) => (
-  <html lang="en" className="s8-layout-root">
+interface MainLayoutProps {
+  children: React.ReactNode;
+}
+const MainLayout = async ({ children }: MainLayoutProps) => (
+  <html>
     <body>
-      {children}
+      <div className="s8-layout">
+        <PageHeader className="s8-page-header s8-page-root-header">
+          <div className="glow flex-col justify-start items-center">
+            <Image
+              src="/media/logo-logotype.svg"
+              width={190}
+              height={190}
+              alt="logo"
+            />
+            <h4>sweet &amp; productive</h4>
+          </div>
+        </PageHeader>
+        <main className="s8-page-main s8-page-root-main md:grid md:grid-cols-2">
+          {children}
+        </main>
+      </div>
       <footer className="s8-layout-root-footer">
         <h6>
           &copy; {cfg.copyright}

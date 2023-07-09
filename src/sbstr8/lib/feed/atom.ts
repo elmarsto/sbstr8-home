@@ -51,7 +51,7 @@ export function GET() {
         date: updated || created ? new Date(updated || created) : currentDate,
         description,
         image: pic ? urlJoin(cfg.link, pic) : undefined,
-        link: urlJoin(cfg.link, defaultPostPath, slug),
+        link: urlJoin(cfg.link, cfg.postPath || defaultPostPath, slug),
         title,
       });
     },

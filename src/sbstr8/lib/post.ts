@@ -41,7 +41,6 @@ export const getSortedPost = (
 
     posts.push({
       // above data so it can be overridden
-      image: path.join(cfg.postPath || defaultPostPath, slug, 'image.png'),
       ...data,
       slug,
       created: data.created || 'Jan 1 2023',

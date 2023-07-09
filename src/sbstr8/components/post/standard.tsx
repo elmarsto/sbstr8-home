@@ -45,15 +45,12 @@ export const Standard = ({
   updated,
 }: StandardProps) => {
   const author = authors && authors.length > 0 ? authors[0] : defaultAuthor;
-  const pic = cfg.icon || defaultLogo;
+  // FIXME: fix upstream this hsould not pull in pageHeader
   return (
     <div className={ccn('s8-post-standard', className)}>
-      <PageHeader className="s8-post-standard-header">
-        <Image src={pic} width={LOGO_SZ} height={LOGO_SZ} alt="logo" />
-      </PageHeader>
-      <main>
-        <article className="s8-post-standard-article">
-          <header className="s8-post-standard-article-header">
+      <article className="s8-post-standard-article">
+        <header className="s8-post-standard-article-header">
+          {image && (
             <Image
               src={image}
               alt={title}
@@ -61,75 +58,75 @@ export const Standard = ({
               height={IMG_HEIGHT}
               className="s8-post-standard-article-header-image"
             />
-            <h2
+          )}
+          <h2
+            className={ccn(
+              's8-post-standard-article-header-title',
+              titleClassName,
+            )}
+          >
+            {title}
+          </h2>
+          {author && (
+            <h3
               className={ccn(
-                's8-post-standard-article-header-title',
-                titleClassName,
+                's8-post-standard-article-header-author',
+                authorClassName,
               )}
             >
-              {title}
-            </h2>
-            {author && (
-              <h3
+              by{' '}
+              <span
                 className={ccn(
-                  's8-post-standard-article-header-author',
+                  's8-post-standard-article-header-author-name',
                   authorClassName,
                 )}
               >
-                by{' '}
+                {author.name}
+              </span>
+            </h3>
+          )}
+          <h3
+            className={ccn(
+              's8-post-standard-article-date-created',
+              dateClassName,
+            )}
+          >
+            {created}
+          </h3>
+          {updated && (
+            <h3 className={ccn('s8-post-standard-article-date-updated')}>
+              <em>
+                Updated{' '}
                 <span
                   className={ccn(
-                    's8-post-standard-article-header-author-name',
-                    authorClassName,
+                    's8-post-standard-article-date-updated-date',
+                    dateClassName,
                   )}
                 >
-                  {author.name}
+                  {updated}
                 </span>
-              </h3>
-            )}
-            <h3
-              className={ccn(
-                's8-post-standard-article-date-created',
-                dateClassName,
-              )}
-            >
-              {created}
+              </em>
             </h3>
-            {updated && (
-              <h3 className={ccn('s8-post-standard-article-date-updated')}>
-                <em>
-                  Updated{' '}
-                  <span
-                    className={ccn(
-                      's8-post-standard-article-date-updated-date',
-                      dateClassName,
-                    )}
-                  >
-                    {updated}
-                  </span>
-                </em>
-              </h3>
-            )}
-          </header>
-          <div
-            className={ccn(
-              's8-post-standard-article-body',
-              's8-article-body',
-              contentClassName,
-            )}
-          >
-            {children}
-          </div>
-          <em
-            className={ccn(
-              's8-post-standard-article-footnote',
-              footnoteClassName,
-            )}
-          >
-            {footnotes}
-          </em>
-        </article>
-      </main>
+          )}
+        </header>
+        <div
+          className={ccn(
+            's8-post-standard-article-body',
+            's8-article-body',
+            contentClassName,
+          )}
+        >
+          {children}
+        </div>
+        <em
+          className={ccn(
+            's8-post-standard-article-footnote',
+            footnoteClassName,
+          )}
+        >
+          {footnotes}
+        </em>
+      </article>
     </div>
   );
 };

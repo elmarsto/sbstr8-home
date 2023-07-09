@@ -42,21 +42,24 @@ export const Lede = ({
 }: LedeProps) => {
   const Link = LinkComponent || defaultLinkComponent;
   const Md = MdComponent || defaultMdComponent;
-  const pic = thumbnail || image || cfg.icon || THUMB_DEFAULT;
+  const pic = thumbnail || image;
+  // FIXME: this is using hardwired constants. Fix upstream
   return (
     <div className={ccn('s8-lede', className)} style={style}>
-      <Link className={ccn('s8-lede-thumbnail')} href={urlJoin('posts', slug)}>
-        <Image
-          className={thumbnailClassName}
-          src={pic}
-          width={THUMB_SZ}
-          height={THUMB_SZ}
-          alt={title}
-        />
-      </Link>
+      {pic && (
+        <Link className={ccn('s8-lede-thumbnail')} href={urlJoin('news', slug)}>
+          <Image
+            className={thumbnailClassName}
+            src={pic}
+            width={THUMB_SZ}
+            height={THUMB_SZ}
+            alt={title}
+          />
+        </Link>
+      )}
       <div className="s8-lede-text">
         <h3 className={ccn('s8-lede-title', titleClassName)}>
-          <Link href={urlJoin('posts', slug)}>{title}</Link>
+          <Link href={urlJoin('news', slug)}>{title}</Link>
         </h3>
         <h4 className={ccn('s8-lede-date', dateClassName)}>{date}</h4>
         <div className={ccn('s8-lede-description', descriptionClassName)}>

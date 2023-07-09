@@ -23,6 +23,7 @@ export const LedeList = async ({
 }: LedeListProps) => {
   const overLede = await useOverride(defaultLedeComponent);
   const Lede = LedeComponent || overLede;
+  console.log(children);
   return (
     <ul className={ccn('s8-lede-list', className)} style={style}>
       {children.map((p: LedeProps, i: number) => (
