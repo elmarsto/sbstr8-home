@@ -1,13 +1,8 @@
 import { ReactNode } from 'react';
 import ccn from '@sindresorhus/class-names';
-import PageHeader from '@/sbstr8/components/page/header';
 import Image from '@/sbstr8/components/image';
 import { Person } from '@/sbstr8/lib/types/person';
 import { defaultAuthor } from '@/../sbstr8.config';
-import cfg from '@/../sbstr8.config';
-
-const LOGO_SZ = 32;
-const defaultLogo = '/media/sbstr8.svg';
 
 const IMG_WIDTH = 2048;
 const IMG_HEIGHT = 1024;
