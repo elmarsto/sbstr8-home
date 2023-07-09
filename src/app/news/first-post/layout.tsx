@@ -10,7 +10,6 @@ export const metadata = {
   keywords: [meta.title],
   openGraph: {
     description: meta.description,
-    images: meta.image ? [meta.image] : [],
     title: meta.title,
     type: 'article',
   },
