@@ -1,5 +1,5 @@
 import { Config } from '@/sbstr8/lib/types/config';
-import { faQuestion, faHome, faRss } from '@fortawesome/free-solid-svg-icons';
+import { faQuestion, faRss } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import defaults from '@/sbstr8/lib/default';
 // import Link from '@/sbstr8/components/link';
