@@ -1,6 +1,7 @@
 import { Config } from '@/sbstr8/lib/types/config';
-// import { faList, faRss, faHome } from '@fortawesome/free-solid-svg-icons';
-// import defaults from '@/sbstr8/lib/default';
+import { faQuestion, faHome, faRss } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import defaults from '@/sbstr8/lib/default';
 // import Link from '@/sbstr8/components/link';
 // import Feature from '@/sbstr8/components/feature';
 export const env = process.env.NODE_ENV;
@@ -19,7 +20,7 @@ export const config: Config = {
   link: isProd ? 'https://sbstr8.lizmars.net/' : 'http://127.0.0.1:3000',
   owners: [defaultAuthor],
   title: 'Sbstr8 Home',
-  postPath: '/posts',
+  postPath: '/news',
   feedPath: '/feed',
   icon: '/media/logo.svg',
   image: '/media/logo-logotype.svg',
@@ -28,8 +29,14 @@ export default config;
 
 // this export has to be here
 export const override = new WeakMap();
-// override.set(defaults.menu, [
-//   { href: config.link, icon: faHome, title: 'back' },
-// ]);
+override.set(defaults.menu, [
+  { href: '/', icon: faQuestion, title: 'What Is' },
+  { href: '/news', icon: faRss, title: 'News' },
+  {
+    href: 'https://github.com/elmarsto/sbstr8',
+    icon: faGithub,
+    title: 'GitHub',
+  },
+]);
 // override.set(Link, import('./src/components/my-link'));
 // override.set(Feature, import('./src/components/my-feature'));

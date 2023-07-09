@@ -1,4 +1,5 @@
 import { ReactNode, FunctionComponent, CSSProperties } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Link as defaultLinkComponent,
   LinkProps,
@@ -33,13 +34,26 @@ export const PageHeader = async ({
           <Link href={cfg.link}>{children}</Link>
         </span>
         <menu className="s8-page-header-nav-menu">
-          {menu.map(({ href, title }: MenuItem, i: number) => (
-            <h1
+          {menu.map(({ icon, iconic, href, title }: MenuItem, i: number) => (
+            <li
               key={i}
               className={ccn('s8-page-header-nav-menu-item', menuItemClassName)}
             >
-              <Link href={href}>{title}</Link>
-            </h1>
+              <Link href={href}>
+                {icon && (
+                  <FontAwesomeIcon
+                    className="s8-page-header-nav-menu-item-icon"
+                    icon={icon}
+                    size="sm"
+                  />
+                )}
+                {!iconic && (
+                  <span className="s8-page-header-nav-menu-item-text">
+                    {title}
+                  </span>
+                )}
+              </Link>
+            </li>
           ))}
         </menu>
       </nav>

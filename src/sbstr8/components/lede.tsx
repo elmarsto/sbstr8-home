@@ -10,7 +10,7 @@ import {
 import { Md as defaultMdComponent, MdProps } from '@/sbstr8/components/md';
 import cfg from '@/../sbstr8.config';
 
-const THUMB_SZ = 256;
+const THUMB_SZ = 190;
 const THUMB_DEFAULT = '/media/sbstr8.svg';
 
 export interface LedeProps extends CookedPostMetadata {
@@ -54,12 +54,14 @@ export const Lede = ({
           alt={title}
         />
       </Link>
-      <h2 className={ccn('s8-lede-title', titleClassName)}>
-        <Link href={urlJoin('posts', slug)}>{title}</Link>
-      </h2>
-      <h3 className={ccn('s8-lede-date', dateClassName)}>{date}</h3>
-      <div className={ccn('s8-lede-description', descriptionClassName)}>
-        <Md>{description}</Md>
+      <div className="s8-lede-text">
+        <h3 className={ccn('s8-lede-title', titleClassName)}>
+          <Link href={urlJoin('posts', slug)}>{title}</Link>
+        </h3>
+        <h4 className={ccn('s8-lede-date', dateClassName)}>{date}</h4>
+        <div className={ccn('s8-lede-description', descriptionClassName)}>
+          <Md>{description}</Md>
+        </div>
       </div>
     </div>
   );
