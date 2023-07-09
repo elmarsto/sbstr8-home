@@ -8,10 +8,8 @@ import {
   LinkProps,
 } from '@/sbstr8/components/link';
 import { Md as defaultMdComponent, MdProps } from '@/sbstr8/components/md';
-import cfg from '@/../sbstr8.config';
 
 const THUMB_SZ = 190;
-const THUMB_DEFAULT = '/media/sbstr8.svg';
 
 export interface LedeProps extends CookedPostMetadata {
   LinkComponent?: FunctionComponent<LinkProps>;
